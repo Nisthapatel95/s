@@ -1,0 +1,6 @@
+<div>
+    <p *ngFor="let item of user">{{item}}</p>
+</div>
+<div>
+    <app-child [myinputMsg]= "myinputmessage" (myOutput)="GetChildData($event)"></app-child>
+</div>
