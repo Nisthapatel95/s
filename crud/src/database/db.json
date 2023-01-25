@@ -1,0 +1,28 @@
+{
+  "Employeelist": [
+    {
+      "id": 2,
+      "firstname": "Yagnesh",
+      "lastname": "patel",
+      "emailid": "Yagnesh23@gmail.com",
+      "password": "Yagnesh@@3",
+      "phone": 8866959995
+    },
+    {
+      "id": 2,
+      "firstname": "Yagnesh",
+      "lastname": "patel",
+      "emailid": "Yagnesh23@gmail.com",
+      "password": "Yagnesh@@3",
+      "phone": 8866959995
+    },
+    {
+      "id": 3,
+      "firstname": "Smit",
+      "lastname": "patel",
+      "emailid": "test@gmail.com",
+      "password": "Test@1234",
+      "phone": 889966586658
+    }
+  ]
+}

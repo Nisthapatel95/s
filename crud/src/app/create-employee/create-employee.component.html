@@ -1,0 +1,89 @@
+<div class="row">
+    <div class="card col-md-6 offset-md-3 offset-md-3">
+        <div class="row">
+            <h3 class="text-center"> Create Employee </h3>
+            <hr />
+            <div class="card-body">
+                <form [formGroup]="userForm">
+                    <!-- <div class="form-outline ">
+                        <label>First Name</label>
+                        <input type="text" class="form-control" formControlName="firstName" />
+                        <div
+                            *ngIf="userForm.controls['firstName'].touched && (userForm.controls['firstName'].invalid )">
+                            <div class="text-danger" *ngIf="userForm.controls['firstName'].errors?.['required']">this
+                                field  is required</div>
+                            <span *ngIf="userForm.controls['firstName'].errors?.['pattern']"
+                                class="text-danger error-fsize">User does not exist</span>
+                            <div class="text-danger"
+                                *ngIf="userForm.controls['firstName'].errors?.['pattern'] && userForm.controls['firstName'].dirty">
+                                Provide 5 digit</div>
+                        </div>
+                    </div> -->
+                    <div class="form-outline">
+                        <label class="form-label  " for="firstname">firstName </label>
+                        <input type="text" id="firstname" class="form-control text   "
+                            placeholder="" formControlName="firstname" />
+                        <div
+                            *ngIf="userForm.controls['firstname'].touched && (userForm.controls['firstname'].invalid )">
+                            <div class="text-danger"
+                                *ngIf="userForm.controls['firstname'].errors?.['required']">this
+                                field
+                                is required
+                            </div>
+                        </div>
+                    </div>
+                    <label> Last Name</label>
+                    <input type="lastname" class="form-control" formControlName="lastname" />
+                    <div *ngIf="userForm.controls['lastname'].invalid && (userForm.controls['lastname'].touched)">
+                        <span *ngIf=" userForm.controls['lastname'].errors?.['maxlength']"
+                            class="form-text text-danger">
+                            max length is 5
+                        </span>
+                        <span class="text-danger" *ngIf="userForm.controls['lastname'].errors?.['required']">This field
+                            is required</span>
+                        <span *ngIf="userForm.controls['lastname'].errors?.['pattern']" class="text-danger error-fsize">
+                            User does not exist</span>
+                    </div>
+
+                    <div class="form-outline ">
+                        <label class="form-label " for="phone">Phone Number</label>
+                        <input type="number" id="phone" class="form-control " placeholder="" formControlName="phone" />
+                        <div
+                            *ngIf="userForm.controls['phone'].invalid && ( userForm.controls['phone'].touched||userForm.controls['phone'].dirty )">
+                            <span class="text-danger fs-7" *ngIf="userForm.controls['phone'].errors?.['required']"> This
+                                Field Is
+                                Required</span>
+
+                            <span class="text-danger fs-7"
+                                *ngIf="(userForm.controls['phone'].errors?.['maxlength'] || userForm.controls['phone'].errors?.['minlength']) && !(userForm.controls['phone'].errors?.['pattern'])">
+                                Contact Number must be 10 numbers.</span>
+                        </div>
+                    </div>
+
+
+                    <label>Email ID</label>
+                    <input type="emailid" maxlength="50" class="form-control" formControlName="emailid" />
+                    <div *ngIf="userForm.controls['emailid'].invalid && (userForm.controls['emailid'].touched)">
+                        <span class="text-danger" *ngIf="userForm.controls['emailid'].errors?.['required']">This field is
+                            required</span>
+                        <span *ngIf="userForm.controls['emailid'].errors?.['pattern']" class="text-danger error-fsize">
+                            User does not exist</span>
+                    </div>
+                    <label>Password</label>
+                    <input type="password" class="form-control" formControlName="password" />
+                    <div *ngIf="userForm.controls['password'].invalid && (userForm.controls['password'].touched)">
+                        <span class="text-danger" *ngIf="userForm.controls['password'].errors?.['required']">This field
+                            is required</span>
+                        <span *ngIf="userForm.controls['password'].errors?.['pattern'] "
+                            class="text-danger error-fsize">
+                            Please enter valid password </span>
+                    </div>
+                    <br />
+                    <div class="btn">
+                        <button class="btn btn-primary" type="submit" (click)="submitUser()">Submit form</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

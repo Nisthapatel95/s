@@ -1,0 +1,32 @@
+
+<div class="row">
+    <h2>Employee List</h2>
+</div>
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th> First Name</th>
+            <th> Last Name</th>
+            <th> Email Id</th>
+            <th> Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let Employeelist of employee1">
+            <td>{{Employeelist.id}}</td>
+            <td>{{Employeelist.firstname}}</td>
+            <td>{{Employeelist.lastname}}</td>
+            <td>{{Employeelist.emailid}}</td>
+            <td>
+                <button (click)="updateEmployee(Employeelist.id)">Update</button>
+                <button (click)="deleteEmployee()">Delete</button>
+                <li *ngIf="promptResult">
+                    You chose: <i>{{promptResult}}</i>
+                  </li>
+                <button (click)="employeeDetails(Employeelist.id)">View</button>
+            </td>
+        </tr>
+
+    </tbody>
+</table>
